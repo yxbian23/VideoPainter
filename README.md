@@ -12,7 +12,7 @@ Keywords: Video Inpainting, Video Editing, Video Generation
 <p align="center">
   <a href="https://yxbian23.github.io/project/video-painter">🌐Project Page</a> |
   <a href="https://arxiv.org/abs/2503.05639">📜Arxiv</a> |
-  <a href="https://huggingface.co/datasets/TencentARC/VPBench">🗄️Data</a> |
+  <a href="https://huggingface.co/collections/TencentARC/videopainter-67cc49c6146a48a2ba93d159">🗄️Data</a> |
   <a href="https://youtu.be/HYzNfsD3A0s">📹Video</a> |
   <a href="https://huggingface.co/TencentARC/VideoPainter">🤗Hugging Face Model</a> |
 </p>
@@ -39,14 +39,14 @@ Keywords: Video Inpainting, Video Editing, Video Generation
 
 ## 🔥 Update Log
 - [2025/3/09] 📢 📢  [VideoPainter](https://huggingface.co/TencentARC/VideoPainter) are released, an efficient, any-length video inpainting & editing framework with plug-and-play context control.
-- [2025/3/09] 📢 📢  [VPData and VPBench](https://huggingface.co/datasets/TencentARC/VPBench) are released, the largest video inpainting dataset with precise segmentation masks and dense video captions (>390K clips).
+- [2025/3/09] 📢 📢  [VPData](https://huggingface.co/datasets/TencentARC/VPData) and [VPBench](https://huggingface.co/datasets/TencentARC/VPBench) are released, the largest video inpainting dataset with precise segmentation masks and dense video captions (>390K clips).
 
 ## TODO
 
 - [x] Release trainig and inference code
 - [x] Release evluation code
 - [x] Release [VideoPainter checkpoints](https://huggingface.co/TencentARC/VideoPainter) (based on CogVideoX-5B)
-- [x] Release [VPData and VPBench](https://huggingface.co/datasets/TencentARC/VPBench) for large-scale training and evaluation.
+- [x] Release [VPData and VPBench](https://huggingface.co/collections/TencentARC/videopainter-67cc49c6146a48a2ba93d159) for large-scale training and evaluation.
 - [x] Release gradio demo
 - [ ] Data preprocessing code
 ## 🛠️ Method Overview
@@ -101,7 +101,7 @@ pip install -e .
 
 **VPBench and VPData**
 
-You can download the VPBench [here](https://huggingface.co/datasets/TencentARC/VPBench) (as well as the Davis we re-processed), which are used for training and testing the BrushNet. By downloading the data, you are agreeing to the terms and conditions of the license. The data structure should be like:
+You can download the VPBench [here](https://huggingface.co/datasets/TencentARC/VPBench), and the VPData [here](https://huggingface.co/datasets/TencentARC/VPData) (as well as the Davis we re-processed), which are used for training and testing the BrushNet. By downloading the data, you are agreeing to the terms and conditions of the license. The data structure should be like:
 
 ```
 |-- data
@@ -156,7 +156,16 @@ unzip davis.zip
 unzip video_inpainting.zip
 ```
 
-Noted: *Due to the space limit, you need to run the following script to download the complete VPData. The format should be consistent with VPBench above (After download the VPBench, the script will automatically place the video and mask sequences from VPData into the corresponding dataset directories that have been created by VPBench).*
+You can download the VPData (only mask and text annotations due to the space limit), and put the dataset to the `data` folder by:
+```
+git lfs install
+git clone https://huggingface.co/datasets/TencentARC/VPData
+mv VPBench data
+cd data
+unzip video_inpainting.zip
+```
+
+Noted: *Due to the space limit, you need to run the following script to download the raw videos of the complete VPData. The format should be consistent with VPData/VPBench above (After download the VPData/VPBench, the script will automatically place the raw videos of VPData into the corresponding dataset directories that have been created by VPBench).*
 
 ```
 cd data_utils
@@ -206,6 +215,11 @@ The ckpt structure should be like:
     |-- VideoPainterID/checkpoints
         |-- pytorch_lora_weights.safetensors
     |-- CogVideoX-5b-I2V
+        |-- scheduler
+        |-- transformer
+        |-- vae
+        |-- ...
+    |-- flux_inp
         |-- scheduler
         |-- transformer
         |-- vae
