@@ -1008,7 +1008,7 @@ with gr.Blocks() as iface:
 Plug-and-Play Context Control</h3>
     <p style="text-align: center; font-weight: bold">
         <a href="https://yxbian23.github.io/project/video-painter/">🌍 Project Page</a> | 
-        <a href="https://arxiv.org/abs/xxx">📃 ArXiv Preprint</a> | 
+        <a href="https://arxiv.org/abs/2503.05639">📃 ArXiv Preprint</a> | 
         <a href="https://github.com/TencentARC/VideoPainter">🧑‍💻 Github Repository</a>
     </p>
     <p style="text-align: left; font-size: 1.1em;">
