@@ -11,7 +11,7 @@ Keywords: Video Inpainting, Video Editing, Video Generation
 
 <p align="center">
   <a href="https://yxbian23.github.io/project/video-painter">🌐Project Page</a> |
-  <a href="https://arxiv.org/abs/xxx">📜Arxiv</a> |
+  <a href="https://arxiv.org/abs/2503.05639">📜Arxiv</a> |
   <a href="https://huggingface.co/datasets/TencentARC/VPBench">🗄️Data</a> |
   <a href="https://youtu.be/HYzNfsD3A0s">📹Video</a> |
   <a href="https://huggingface.co/TencentARC/VideoPainter">🤗Hugging Face Model</a> |
@@ -417,11 +417,14 @@ bash eval_editing_id_resample.sh
 ## 🤝🏼 Cite Us
 
 ```
-@article{bian2025videopainter,
-  title={VideoPainter: Any-length Video Inpainting and Editing with Plug-and-Play Context Control},
-  author={Bian, Yuxuan and Zhang, Zhaoyang and Ju, Xuan and Cao, Mingdeng and Xie, Liangbin and Shan, Ying and Xu, Qiang},
-  journal={arXiv preprint arXiv:xxx},
-  year={2025}
+@misc{bian2025videopainteranylengthvideoinpainting,
+      title={VideoPainter: Any-length Video Inpainting and Editing with Plug-and-Play Context Control}, 
+      author={Yuxuan Bian and Zhaoyang Zhang and Xuan Ju and Mingdeng Cao and Liangbin Xie and Ying Shan and Qiang Xu},
+      year={2025},
+      eprint={2503.05639},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2503.05639}, 
 }
 ```
 
