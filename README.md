@@ -48,7 +48,7 @@ Keywords: Video Inpainting, Video Editing, Video Generation
 ## TODO
 
 - [x] Release trainig and inference code
-- [x] Release evluation code
+- [x] Release evaluation code
 - [x] Release [VideoPainter checkpoints](https://huggingface.co/TencentARC/VideoPainter) (based on CogVideoX-5B)
 - [x] Release [VPData and VPBench](https://huggingface.co/collections/TencentARC/videopainter-67cc49c6146a48a2ba93d159) for large-scale training and evaluation.
 - [x] Release gradio demo
