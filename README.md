@@ -1,3 +1,4 @@
+
 # VideoPainter
 
 This repository contains the implementation of the paper "VideoPainter: Any-length Video Inpainting and Editing with Plug-and-Play Context Control"
@@ -10,12 +11,15 @@ Keywords: Video Inpainting, Video Editing, Video Generation
 
 
 <p align="center">
-  <a href="https://yxbian23.github.io/project/video-painter">🌐Project Page</a> |
-  <a href="https://arxiv.org/abs/2503.05639">📜Arxiv</a> |
-  <a href="https://huggingface.co/collections/TencentARC/videopainter-67cc49c6146a48a2ba93d159">🗄️Data</a> |
-  <a href="https://youtu.be/HYzNfsD3A0s">📹Video</a> |
-  <a href="https://huggingface.co/TencentARC/VideoPainter">🤗Hugging Face Model</a> |
+<a href='https://yxbian23.github.io/project/video-painter'><img src='https://img.shields.io/badge/Project-Page-Green'></a> &nbsp;
+<a href="https://arxiv.org/abs/2503.05639"><img src="https://img.shields.io/badge/arXiv-2503.05639-b31b1b.svg"></a> &nbsp;
+<a href="https://youtu.be/HYzNfsD3A0s"><img src="https://img.shields.io/badge/YouTube-Video-red?logo=youtube"></a> &nbsp;
+<a href='https://huggingface.co/datasets/TencentARC/VPData'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue'></a> &nbsp;
+<a href='https://huggingface.co/datasets/TencentARC/VPBench'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Benchmark-blue'></a> &nbsp;
+<a href="https://huggingface.co/TencentARC/VideoPainter"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue"></a>
 </p>
+
+**Your star means a lot for us to develop this project!** :star:
 
 
 **📖 Table of Contents**
@@ -52,13 +56,14 @@ Keywords: Video Inpainting, Video Editing, Video Generation
 ## 🛠️ Method Overview
 
 We propose a novel dual-stream paradigm VideoPainter that incorporates an efficient context encoder (comprising only 6\% of the backbone parameters) to process masked videos and inject backbone-aware background contextual cues to any pre-trained video DiT, producing semantically consistent content in a plug-and-play manner. This architectural separation significantly reduces the model's learning complexity while enabling nuanced integration of crucial background context. We also introduce a novel target region ID resampling technique that enables any-length video inpainting, greatly enhancing our practical applicability. Additionally, we establish a scalable dataset pipeline leveraging current vision understanding models, contributing VPData and VPBench to facilitate segmentation-based inpainting training and assessment, the largest video inpainting dataset and benchmark to date with over 390K diverse clips. Using inpainting as a pipeline basis, we also explore downstream applications including video editing and video editing pair data generation, demonstrating competitive performance and significant practical potential. 
-![](assets/method.jpg)
+![](assets/teaser.jpg)
 
 
 
 ## 🚀 Getting Started
 
-### Environment Requirement 🌍
+<details>
+<summary><b>Environment Requirement 🌍</b></summary>
 
 
 Clone the repo:
@@ -95,8 +100,10 @@ Optional, you can install sam2 for gradio demo thourgh:
 cd ./app
 pip install -e .
 ```
+</details>
 
-### Data Download ⬇️
+<details>
+<summary><b>Data Download ⬇️</b></summary>
 
 
 **VPBench and VPData**
@@ -172,8 +179,10 @@ cd data_utils
 python VPData_download.py
 ```
 
+</details>
 
-**Checkpoints**
+<details>
+<summary><b>Checkpoints</b></summary>
 
 Checkpoints of VideoPainter can be downloaded from [here](https://huggingface.co/TencentARC/VideoPainter). The ckpt folder contains 
 
@@ -225,12 +234,12 @@ The ckpt structure should be like:
         |-- vae
         |-- ...
 ```
-
+</details>
 
 ## 🏃🏼 Running Scripts
 
-
-### Training 🤯
+<details>
+<summary><b>Training 🤯</b></summary>
 
 You can train the VideoPainter using the script:
 
@@ -373,11 +382,11 @@ accelerate launch --config_file accelerate_config_machine_single_ds_wo_cpu.yaml 
   --p_random_brush 0.3 \
   --id_pool_resample_learnable
 ```
+</details>
 
 
-
-
-### Inference 📜
+<details>
+<summary><b>Inference 📜</b></summary>
 
 You can inference for the video inpainting or editing with the script:
 
@@ -397,7 +406,10 @@ bash edit_bench.sh
 ```
 
 Since VideoPainter is trained on public Internet videos, it primarily performs well on general scenarios. For high-quality industrial applications (e.g., product exhibitions, virtual try-on), we recommend training the model on your domain-specific data. We welcome and appreciate any contributions of trained models from the community!
+</details>
 
+<details>
+<summary><b>Gradio Demo 🖌️</b></summary>
 
 You can also inference through gradio demo:
 
@@ -409,9 +421,11 @@ CUDA_VISIBLE_DEVICES=0 python app.py \
     --id_adapter ../ckpt/VideoPainterID/checkpoints \
     --img_inpainting_model ../ckpt/flux_inp
 ```
+</details>
 
 
-### Evaluation 📏
+<details>
+<summary><b>Evaluation 📏</b></summary>
 
 You can evaluate using the script:
 
@@ -426,19 +440,16 @@ bash eval_edit.sh
 # video editing with ID resampling
 bash eval_editing_id_resample.sh
 ```
-
+</details>
 
 ## 🤝🏼 Cite Us
 
 ```
-@misc{bian2025videopainteranylengthvideoinpainting,
-      title={VideoPainter: Any-length Video Inpainting and Editing with Plug-and-Play Context Control}, 
-      author={Yuxuan Bian and Zhaoyang Zhang and Xuan Ju and Mingdeng Cao and Liangbin Xie and Ying Shan and Qiang Xu},
-      year={2025},
-      eprint={2503.05639},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2503.05639}, 
+@article{bian2025videopainter,
+  title={VideoPainter: Any-length Video Inpainting and Editing with Plug-and-Play Context Control},
+  author={Bian, Yuxuan and Zhang, Zhaoyang and Ju, Xuan and Cao, Mingdeng and Xie, Liangbin and Shan, Ying and Xu, Qiang},
+  journal={arXiv preprint arXiv:2503.05639},
+  year={2025}
 }
 ```
 
