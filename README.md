@@ -212,6 +212,13 @@ git clone https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev
 mv ckpt/FLUX.1-Fill-dev ckpt/flux_inp
 ```
 
+[Optional]You need to download [SAM2](https://huggingface.co/facebook/sam2-hiera-large) for video segmentation in gradio demo:
+```
+git lfs install
+cd ckpt
+wget https://huggingface.co/facebook/sam2-hiera-large/resolve/main/sam2_hiera_large.pt
+```
+You can also choose the segmentation checkpoints of other sizes to balance efficiency and performance, such as [SAM2-Tiny](https://huggingface.co/facebook/sam2-hiera-tiny).
 
 The ckpt structure should be like:
 
@@ -233,6 +240,7 @@ The ckpt structure should be like:
         |-- transformer
         |-- vae
         |-- ...
+    |-- sam2_hiera_large.pt
 ```
 </details>
 
