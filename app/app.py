@@ -40,7 +40,7 @@ parser.add_argument("--id_adapter", type=str, default="")
 parser.add_argument("--img_inpainting_model", type=str, default="../")
 args = parser.parse_args()
 
-sam2_checkpoint = "../ckpt/Grounded-SAM-2/sam2_hiera_large.pt"
+sam2_checkpoint = "../ckpt/sam2_hiera_large.pt"
 model_cfg = "sam2_hiera_l.yaml"
 
 predictor = build_sam2_video_predictor(model_cfg, sam2_checkpoint)
