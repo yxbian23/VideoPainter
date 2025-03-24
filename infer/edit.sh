@@ -22,7 +22,7 @@ video_editing_instructions=(
 inpainting_frames=49
 down_sample_fps=8
 image_or_video_path="../data/videovo/raw_video"
-inpainting_mask_meta="../data/video_inpainting/pexels_videovo_test_dataset.csv"
+inpainting_mask_meta="../data/pexels_videovo_test_dataset.csv"
 prev_clip_weight=0.0
 
 img_inpainting_model="../ckpt/flux_inp"
