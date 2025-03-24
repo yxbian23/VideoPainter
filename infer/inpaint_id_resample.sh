@@ -24,11 +24,11 @@ image_or_video_path="../data/videovo/raw_video"
 
 data_kind="test"
 if [ "$data_kind" == "test" ]; then
-    inpainting_mask_meta="../data/video_inpainting/pexels_videovo_test_dataset.csv"
+    inpainting_mask_meta="../data/pexels_videovo_test_dataset.csv"
 elif [ "$data_kind" == "val" ]; then
-    inpainting_mask_meta="../data/video_inpainting/pexels_videovo_val_dataset.csv"
+    inpainting_mask_meta="../data/pexels_videovo_val_dataset.csv"
 elif [ "$data_kind" == "train" ]; then
-    inpainting_mask_meta="../data/video_inpainting/pexels_videovo_train_dataset.csv"
+    inpainting_mask_meta="../data/pexels_videovo_train_dataset.csv"
 else
     echo "data_kind must be test or train or val"
     exit 1
