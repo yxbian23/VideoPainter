@@ -13,13 +13,16 @@ Keywords: Video Inpainting, Video Editing, Video Generation
 <p align="center">
 <a href='https://yxbian23.github.io/project/video-painter'><img src='https://img.shields.io/badge/Project-Page-Green'></a> &nbsp;
 <a href="https://arxiv.org/abs/2503.05639"><img src="https://img.shields.io/badge/arXiv-2503.05639-b31b1b.svg"></a> &nbsp;
+<a href="https://github.com/TencentARC/VideoPainter"><img src="https://img.shields.io/badge/GitHub-Code-black?logo=github"></a> &nbsp;
 <a href="https://youtu.be/HYzNfsD3A0s"><img src="https://img.shields.io/badge/YouTube-Video-red?logo=youtube"></a> &nbsp;
 <a href='https://huggingface.co/datasets/TencentARC/VPData'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue'></a> &nbsp;
 <a href='https://huggingface.co/datasets/TencentARC/VPBench'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Benchmark-blue'></a> &nbsp;
 <a href="https://huggingface.co/TencentARC/VideoPainter"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue"></a>
 </p>
 
-**Your star means a lot for us to develop this project!** :star:
+**Your star means a lot for us to develop this project!** ⭐⭐⭐
+
+**VPData and VPBench have been fully uploaded (contain 390K mask sequences and video captions). Welcome to use our biggest video segmentation dataset VPData with video captions!** 🔥🔥🔥 
 
 
 **📖 Table of Contents**
@@ -44,6 +47,8 @@ Keywords: Video Inpainting, Video Editing, Video Generation
 ## 🔥 Update Log
 - [2025/3/09] 📢 📢  [VideoPainter](https://huggingface.co/TencentARC/VideoPainter) are released, an efficient, any-length video inpainting & editing framework with plug-and-play context control.
 - [2025/3/09] 📢 📢  [VPData](https://huggingface.co/datasets/TencentARC/VPData) and [VPBench](https://huggingface.co/datasets/TencentARC/VPBench) are released, the largest video inpainting dataset with precise segmentation masks and dense video captions (>390K clips).
+- [2025/3/25] 📢 📢  The 390K+ high-quality video segmentation masks of [VPData](https://huggingface.co/datasets/TencentARC/VPData) have been fully released.
+- [2025/3/25] 📢 📢  The raw videos of videovo subset have been uploaded to [VPData](https://huggingface.co/datasets/TencentARC/VPData), to solve the raw video link expiration issue.
 
 ## TODO
 
@@ -103,10 +108,7 @@ pip install -e .
 </details>
 
 <details>
-<summary><b>Data Download ⬇️</b></summary>
-
-
-**VPBench and VPData**
+<summary><b>VPBench and VPData Download ⬇️</b></summary>
 
 You can download the VPBench [here](https://huggingface.co/datasets/TencentARC/VPBench), and the VPData [here](https://huggingface.co/datasets/TencentARC/VPData) (as well as the Davis we re-processed), which are used for training and testing the BrushNet. By downloading the data, you are agreeing to the terms and conditions of the license. The data structure should be like:
 
@@ -168,11 +170,16 @@ You can download the VPData (only mask and text annotations due to the space lim
 git lfs install
 git clone https://huggingface.co/datasets/TencentARC/VPData
 mv VPBench data
-cd data
-unzip video_inpainting.zip
+
+# 1. unzip the masks in VPData
+python data_utils/unzip_folder.py --source_dir ./data/videovo_masks --target_dir ./data/video_inpainting/videovo
+python data_utils/unzip_folder.py --source_dir ./data/pexels_masks --target_dir ./data/video_inpainting/pexels
+
+# 2. unzip the raw videos in Videovo subset in VPData
+python data_utils/unzip_folder.py --source_dir ./data/videovo_raw_videos --target_dir ./data/videovo/raw_video
 ```
 
-Noted: *Due to the space limit, you need to run the following script to download the raw videos of the complete VPData. The format should be consistent with VPData/VPBench above (After download the VPData/VPBench, the script will automatically place the raw videos of VPData into the corresponding dataset directories that have been created by VPBench).*
+Noted: *Due to the space limit, you need to run the following script to download the raw videos of the Pexels subset in VPData. The format should be consistent with VPData/VPBench above (After download the VPData/VPBench, the script will automatically place the raw videos of VPData into the corresponding dataset directories that have been created by VPBench).*
 
 ```
 cd data_utils
