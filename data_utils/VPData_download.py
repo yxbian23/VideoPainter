@@ -15,14 +15,14 @@ output_dir = "../data"
 os.makedirs(output_dir, exist_ok=True)
 
 
-videovo_df = pd.read_csv("../data/videovo.csv")
+# videovo_df = pd.read_csv("../data/videovo.csv")
 pexels_df = pd.read_csv("../data/pexels.csv")
 
 
-for index, row in tqdm(videovo_df[:].iterrows(), desc="Downloading videovo videos"):
-    video_url = row["video_url"]
-    file_path = os.path.join(output_dir, "videovo/raw_video", row["file_path"])
-    download_video(video_url, file_path)
+# for index, row in tqdm(videovo_df[:].iterrows(), desc="Downloading videovo videos"):
+#     video_url = row["video_url"]
+#     file_path = os.path.join(output_dir, "videovo/raw_video", row["file_path"])
+#     download_video(video_url, file_path)
 
 
 for index, row in tqdm(pexels_df[:].iterrows(), desc="Downloading pexels videos"):
