@@ -1006,11 +1006,6 @@ with gr.Blocks() as iface:
     <h1 style="text-align: center; color: #333333;">🖌️ VideoPainter</h1>
     <h3 style="text-align: center; color: #333333;">Any-length Video Inpainting and Editing with
 Plug-and-Play Context Control</h3>
-    <p style="text-align: center; font-weight: bold">
-        <a href="https://yxbian23.github.io/project/video-painter/">🌍 Project Page</a> | 
-        <a href="https://arxiv.org/abs/2503.05639">📃 ArXiv Preprint</a> | 
-        <a href="https://github.com/TencentARC/VideoPainter">🧑‍💻 Github Repository</a>
-    </p>
     <p style="text-align: left; font-size: 1.1em;">
     Welcome to the demo of <strong>VideoPainter</strong>. Follow the steps below to explore its capabilities:
     </p>
@@ -1029,9 +1024,6 @@ Plug-and-Play Context Control</h3>
     ⏱️ <b>ZeroGPU Time Limit</b>: Hugging Face ZeroGPU has a inference time limit of 180 seconds.
     If some cases you may meet the time limit, please consider log in with a Pro account or run the gradio demo on your local machine. 
     </p>
-    <p style="text-align: left; font-size: 1.1em;">🤗 Please 🌟 star our <a href="https://github.com/TencentARC/VideoPainter"> GitHub repo </a> 
-    and click on the ❤️ like button above if you find our work helpful.
-    <a href="https://github.com/TencentARC/VideoPainter"><img src="https://img.shields.io/github/stars/TencentARC%2FVideoPainter"/></a> </p>
 </div>
     """
     )
@@ -1174,8 +1166,6 @@ Plug-and-Play Context Control</h3>
     As a generative model, VideoPainter may occasionally produce unexpected outputs.
     Try adjusting the video caption, target object caption, editing instruction, random seed or CFG scale to explore different results.
 <br>
-🤔 <b>Longer Generation</b>:
-    If you need longer video, you can refer to our <a href="https://github.com/TencentARC/VideoPainter">GitHub</a> and run script with your own GPU. <br>
 🤗 <b>Limitation</b>:
     This is the initial beta version of VideoPainter.
     Its generalizability may be limited in certain scenarios, and artifacts can appear with large camera motions due to the current foundation model's constraints.
