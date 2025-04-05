@@ -33,12 +33,6 @@ We propose a novel dual-stream paradigm VideoPainter that incorporates an effici
 <summary><b>Environment Requirement 🌍</b></summary>
 
 
-Clone the repo:
-
-```
-git clone https://github.com/TencentARC/VideoPainter.git
-```
-
 We recommend you first use `conda` to create virtual environment, and install needed libraries. For example:
 
 
